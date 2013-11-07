@@ -7,18 +7,18 @@ gem 'rails', '3.2.14'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'  # some pre-fabbed step definitions
+  gem 'database_cleaner'  # to clear Cucumber test db between runs
+  gem 'capybara'          # lets Cucumber pretend to be a web browser
+  gem 'launchy'           # useful debugging aid for user stories
   gem 'sqlite3'
   gem 'ruby-debug19'
-  gem 'database_cleaner'
   gem 'capybara'
-  gem 'launchy'
   gem 'rspec-rails'
+  gem 'simplecov'
 end
 
-group :test do
-  gem 'cucumber-rails'
-  gem 'cucumber-rails-training-wheels'
-end
 group :production do
 #  gem 'pg'
 end
