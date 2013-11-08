@@ -25,7 +25,7 @@ module NavigationHelpers
     when /^the edit page for "(.*)"$/i then
       movie_id = Movie.find_by_title($1).id
       return "/movies/#{movie_id}/edit"
-    when /^the show page for "(.*)"$/i then
+    when /^the details page for "(.*)"$/i then
       movie_id = Movie.find_by_title($1).id
       return "/movies/#{movie_id}"
     else

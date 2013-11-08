@@ -48,6 +48,6 @@ end
 
 
 Then /the director of "(.*)" should be "(.*)"/ do |title, director|
-  visit path_to("the show page for \"#{title}\"")
+  visit path_to("the details page for \"#{title}\"")
   page.should have_css("ul#details li", :text => director)
 end
