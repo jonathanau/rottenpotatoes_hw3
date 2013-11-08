@@ -45,3 +45,9 @@ Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   page.should have_css("table#movies tbody tr", :count => Movie.all.size)
 end
+
+
+Then /the director of "(.*)" should be "(.*)"/ do |title, director|
+  visit path_to("the show page for \"#{title}\"")
+  page.should have_css("ul#details li", :text => director)
+end
