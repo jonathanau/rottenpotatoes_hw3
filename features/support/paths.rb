@@ -28,6 +28,9 @@ module NavigationHelpers
     when /^the details page for "(.*)"$/i then
       movie_id = Movie.find_by_title($1).id
       return "/movies/#{movie_id}"
+    when /^the Similar Movies page for "(.*)"/ then
+      movie_id = Movie.find_by_title($1).id
+      return "/movies/#{movie_id}/show_similar"
     else
       begin
         page_name =~ /^the (.*) page$/
